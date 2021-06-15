@@ -32,5 +32,9 @@ namespace Gestion_PFE.Models
         }
         public ICollection<Projet> projets { get; set; }
         public ICollection<Demande> Demandes { get; set; }
+       
+        
+        [Display(Name = "Email")]
+        public string Email { get; set; }
     }
 }

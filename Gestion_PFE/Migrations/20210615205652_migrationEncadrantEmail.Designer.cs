@@ -3,14 +3,16 @@ using Gestion_PFE.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Gestion_PFE.Migrations
 {
     [DbContext(typeof(GestionContext))]
-    partial class GestionContextModelSnapshot : ModelSnapshot
+    [Migration("20210615205652_migrationEncadrantEmail")]
+    partial class migrationEncadrantEmail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

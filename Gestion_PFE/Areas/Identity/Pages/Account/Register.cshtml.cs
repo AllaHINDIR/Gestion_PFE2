@@ -110,16 +110,33 @@ namespace Gestion_PFE.Areas.Identity.Pages.Account
 
                         if (_userManager.Options.SignIn.RequireConfirmedAccount)
                         {
-                            Etudiant etudiant = new Etudiant {
-                                LastName=Input.Etudiant.LastName,
-                                FirstMidName=Input.Etudiant.FirstMidName,
-                                Email=Input.Email,
-                                Password=Input.Password               
+                        if (Input.Name == "Student")
+                        {
+                            Etudiant etudiant = new Etudiant
+                            {
+                                LastName = Input.Etudiant.LastName,
+                                FirstMidName = Input.Etudiant.FirstMidName,
+                                Email = Input.Email,
+
                             };
                             _context.Add(etudiant);
                             _context.SaveChanges();
-                            
-                            return RedirectToPage("RegisterConfirmation", new { email = Input.Email });
+                        }
+                        else if (Input.Name == "Professor")
+                        {
+                            Encadrant encadrant = new Encadrant
+                            {
+                                LastName = Input.Etudiant.LastName,
+                                FirstMidName = Input.Etudiant.FirstMidName,
+                                Email = Input.Email,
+
+                            };
+                            _context.Add(encadrant);
+                            _context.SaveChanges();
+                        }
+
+
+                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email });
                             
                         }
                         else

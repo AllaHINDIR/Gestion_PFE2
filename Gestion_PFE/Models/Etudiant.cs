@@ -43,8 +43,7 @@ namespace Gestion_PFE.Models
 
        
         
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+   
 
     }
 }
